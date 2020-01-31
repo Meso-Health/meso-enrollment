@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray1"
+    android:clipToPadding="false">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:clipToPadding="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingBottom="@dimen/space48"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/enrollment_date_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/space16"
+            android:paddingBottom="@dimen/space16"
+            android:background="@drawable/panel_background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/enrollment_date_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray6"
+                android:text="@string/enrollment_date"
+                android:paddingStart="@dimen/space16"
+                android:paddingEnd="@dimen/space16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/enrollment_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontSize16"
+                android:paddingTop="@dimen/space8"
+                android:paddingLeft="@dimen/space16"
+                android:paddingRight="@dimen/space16"
+                app:layout_constraintTop_toBottomOf="@id/enrollment_date_label" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/household_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space16"
+            android:paddingTop="@dimen/space16"
+            android:paddingBottom="@dimen/space16"
+            app:layout_constraintTop_toBottomOf="@id/enrollment_date_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/member_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scrollbars="vertical" />
+
+                <View
+                    android:id="@+id/extra_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray1"
+                    app:layout_constraintTop_toBottomOf="@id/member_list" />
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/next"
+            style="@style/PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space16"
+            android:layout_marginTop="@dimen/space36"
+            android:layout_marginEnd="@dimen/space16"
+            app:layout_constraintTop_toBottomOf="@id/household_container" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/space36"
+        android:paddingBottom="@dimen/space48"
+        android:clipToPadding="false"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/top_photo"
+            android:layout_width="@dimen/thumbnailWidth120"
+            android:layout_height="@dimen/thumbnailHeight120"
+            android:background="@drawable/member_photo_placeholder"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/top_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space16"
+            android:textSize="@dimen/fontSize18"
+            android:textColor="@color/gray9"
+            app:layout_constraintTop_toBottomOf="@id/top_photo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/top_gender_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/space4"
+            android:paddingBottom="@dimen/space48"
+            android:textSize="@dimen/fontSize16"
+            android:textColor="@color/gray6"
+            app:layout_constraintTop_toBottomOf="@id/top_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/demographic_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space8"
+            android:background="@drawable/panel_background"
+            android:padding="@dimen/space16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_gender_age">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/membership_number_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/textInputLayoutMarginFix"
+                android:layout_marginStart="@dimen/textInputLayoutMarginFix"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/membership_number_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/membership_number_label"
+                    android:enabled="false"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <org.watsi.enrollment.views.DialogEditField
+                android:id="@+id/name_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                android:inputType="textCapWords|textNoSuggestions"
+                app:label="@string/name_field_label"
+                app:layout_constraintTop_toBottomOf="@id/membership_number_layout" />
+
+            <org.watsi.enrollment.views.DialogEditField
+                android:id="@+id/gender_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                app:label="@string/gender_field_label"
+                app:layout_constraintTop_toBottomOf="@id/name_field" />
+
+            <org.watsi.enrollment.views.DialogBirthdateField
+                android:id="@+id/edit_birthdate_dialog_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                app:layout_constraintTop_toBottomOf="@id/gender_field" />
+
+            <org.watsi.enrollment.views.DialogEditField
+                android:id="@+id/phone_number_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                android:inputType="phone"
+                app:label="@string/phone_number_field_label"
+                app:layout_constraintTop_toBottomOf="@id/edit_birthdate_dialog_field" />
+
+            <org.watsi.enrollment.views.DialogEditField
+                android:id="@+id/medical_record_number_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                android:visibility="gone"
+                android:inputType="number"
+                app:label="@string/medical_record_number_field_label"
+                app:layout_constraintTop_toBottomOf="@id/phone_number_field" />
+
+            <org.watsi.enrollment.views.DialogEditField
+                android:id="@+id/profession_spinner_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                android:visibility="gone"
+                app:label="@string/profession_label"
+                app:layout_constraintTop_toBottomOf="@id/medical_record_number_field" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/relationship_to_member_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/profession_spinner_field">
+
+                <org.watsi.enrollment.views.DialogEditField
+                    android:id="@+id/relationship_to_member_spinner_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space16"
+                    app:label="@string/relationship_to_member_label"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/relationship_to_member_static_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/textInputLayoutMarginFix"
+                    android:layout_marginStart="@dimen/textInputLayoutMarginFix"
+                    android:layout_marginTop="@dimen/space16"
+                    android:visibility="gone">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/relationship_to_member_static_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/relationship_to_member_label"
+                        android:text="@string/self"
+                        android:enabled="false"/>
+                </android.support.design.widget.TextInputLayout>
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/member_card_panel_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space16"
+            android:paddingTop="@dimen/space48"
+            android:text="@string/member_card_panel_header_text"
+            style="@style/PanelHeader"
+            app:layout_constraintTop_toBottomOf="@id/demographic_container" />
+
+        <org.watsi.enrollment.views.MemberCardIdField
+            android:id="@+id/card_id_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space8"
+            app:layout_constraintTop_toBottomOf="@id/member_card_panel_header" />
+
+        <org.watsi.enrollment.views.PhotoField
+            android:id="@+id/photo_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/card_id_field"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

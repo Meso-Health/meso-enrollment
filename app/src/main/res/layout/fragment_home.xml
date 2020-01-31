@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintHorizontal_chainStyle="spread"
+    app:layout_constraintVertical_chainStyle="spread">
+
+    <!-- Added these guidelines in order to have a layout where there are two columns
+        of buttons. And each button's constraint is so that it is right below the button above it.
+        That way, if a button is disabled (i.e. for implementations without renewals), all the buttons
+        just scoot up without disrupting the left / right positioning.
+    -->
+    <!-- This guideline is so that buttons in the right column are centered between this
+        guideline and the left edge of the screen -->
+    <android.support.constraint.Guideline
+        android:id="@+id/vertical_center_guideline_for_left_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.55"
+        android:orientation="vertical"/>
+
+    <!-- This guideline is so that buttons in the right column are centered between this
+    guideline and the right edge of the screen -->
+    <android.support.constraint.Guideline
+        android:id="@+id/vertical_center_guideline_for_right_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.45"
+        android:orientation="vertical"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/enroll_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:background="@drawable/button_primary_background"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_center_guideline_for_left_buttons">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_new_member_24px"
+            android:text="@string/enroll"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/renew_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:padding="@dimen/space8"
+        android:background="@drawable/button_primary_background"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_center_guideline_for_right_buttons"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_autorenew_24px"
+            android:text="@string/renew"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/amend_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:padding="@dimen/space8"
+        android:background="@drawable/button_primary_background"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/enroll_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_center_guideline_for_left_buttons">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_amend_24px"
+            android:text="@string/amend"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/recent_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:padding="@dimen/space8"
+        android:background="@drawable/button_primary_background"
+        app:layout_constraintTop_toBottomOf="@id/renew_button"
+        app:layout_constraintStart_toEndOf="@id/vertical_center_guideline_for_right_buttons"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_recent_24px"
+            android:text="@string/recent"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/reporting_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:padding="@dimen/space8"
+        android:background="@drawable/button_primary_background"
+        android:visibility="gone"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/amend_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_center_guideline_for_left_buttons">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_reports_24px"
+            android:text="@string/reports"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/status_button"
+        android:layout_marginTop="@dimen/space36"
+        android:layout_width="@dimen/viewHeight120"
+        android:layout_height="@dimen/viewHeight120"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:padding="@dimen/space8"
+        android:background="@drawable/button_primary_background"
+        app:layout_constraintTop_toBottomOf="@id/recent_button"
+        app:layout_constraintStart_toEndOf="@id/vertical_center_guideline_for_right_buttons"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_baseline_syncing_24px"
+            android:text="@string/status"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize18"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

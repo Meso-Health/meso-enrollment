@@ -1,0 +1,257 @@
+!tape
+name: CoverageApiTest
+interactions:
+- recorded: 2020-01-15T19:44:24.320Z
+  request:
+    method: POST
+    uri: http://localhost:5000/authentication_token
+    headers:
+      Authorization: Basic ZW5yb2xsZXI6cGFzc3dvcmQ=
+    body: ''
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"1b34f7fd2ef83f785f2bc29b444fb67b"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 058c0000-c35d-4e3c-b801-857d5cc4931e
+      X-Runtime: '0.302686'
+    body: '{"token":"vZpenvY2.Vk93YgtZtc8a6Un8Wq4BfCbT6KkiGHZF","expires_at":"2020-01-29T22:44:24.186+03:00","user":{"id":91,"created_at":"2019-12-13T22:10:39.003+03:00","name":"enroller","username":"enroller","role":"enrollment_officer","administrative_division_id":1,"added_by":"Thomas
+      Bukowski","security_pin":null,"adjudication_limit":null}}'
+- recorded: 2020-01-15T19:44:28.044Z
+  request:
+    method: POST
+    uri: http://localhost:5000/households
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","enrolled_at":"2018-03-23T08:10:36.306Z","administrative_division_id":1,"address":"21b Baker St"}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"fa31c2821a374b6d0d1d296786d40af5"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: cb6bb641-60fe-461c-8006-7760835839d3
+      X-Runtime: '0.064913'
+    body: '{"id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","enrolled_at":"2018-03-23T11:10:36.306+03:00","administrative_division_id":1,"address":"21b Baker St","members":[]}'
+- recorded: 2020-01-15T19:44:28.363Z
+  request:
+    method: POST
+    uri: http://localhost:5000/members
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"738a6308-08c1-4a4a-b103-7c8200f21b33","enrolled_at":"2018-03-23T08:10:36.307Z","full_name":"Full Name","birthdate":"1993-05-11","birthdate_accuracy":"D","gender":"F","phone_number":"123456","photo_url":"localhost:5000/dragonfly/media/2oi3rj2iorj23oirj23orjo23irj23orj23or","card_id":"TST000000","membership_number":"328-483-948","medical_record_number":null,"household_id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","profession":"farmer","relationship_to_head":"spouse","archived_at":null,"archived_reason":null}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"7386bbb9a68a4b678f39e30c100fab9f"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 396dc61c-7ef0-4b39-87d5-1a298cd42dd8
+      X-Runtime: '0.114807'
+    body: '{"id":"738a6308-08c1-4a4a-b103-7c8200f21b33","created_at":"2020-01-15T22:44:28.315+03:00","updated_at":"2020-01-15T22:44:28.315+03:00","enrolled_at":"2018-03-23T11:10:36.307+03:00","absentee":true,"card_id":null,"full_name":"Full Name","gender":"F","age":26,"birthdate":"1993-05-11","birthdate_accuracy":"D","phone_number":"123456","fingerprints_guid":null,"membership_number":"328-483-948","medical_record_number":null,"medical_record_numbers":{},"profession":"farmer","relationship_to_head":"spouse","archived_at":null,"archived_reason":null,"household_id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","administrative_division_id":1,"coverage_end_date":null,"renewed_at":null,"needs_renewal":null,"unpaid":false}'
+- recorded: 2020-01-15T19:44:28.598Z
+  request:
+    method: POST
+    uri: http://localhost:5000/household_enrollment_records
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"173e03f2-6e56-4bd3-a9df-ddf11802c9c6","household_id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","user_id":93,"enrolled_at":"2018-03-23T08:10:36.307Z","paying":true,"renewal":false,"administrative_division_id":1,"enrollment_period_id":2}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"5e32e86edfbd26fb54843bd2140a0428"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 91d5e22e-45f0-4d6b-951a-955f91056e22
+      X-Runtime: '0.068309'
+    body: '{"id":"173e03f2-6e56-4bd3-a9df-ddf11802c9c6","enrolled_at":"2018-03-23T11:10:36.307+03:00","user_id":93,"enrollment_period_id":2,"household_id":"073e83f2-6e56-4bd8-a9df-ddf11802c9c3","paying":true,"renewal":false,"administrative_division_id":1}'
+- recorded: 2020-01-15T19:44:28.816Z
+  request:
+    method: POST
+    uri: http://localhost:5000/household_enrollment_records
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"10fba909-22cd-4036-b673-7c8200f21b11","household_id":"21fba022-22cd-4026-b673-7c8222f22b23","user_id":93,"enrolled_at":"2018-03-23T08:10:36.307Z","paying":true,"renewal":false,"administrative_division_id":1,"enrollment_period_id":2}'
+  response:
+    status: 422
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Vary: Origin
+      X-Request-Id: 76e2153d-d67c-4927-bb8f-20417d2fef91
+      X-Runtime: '0.078575'
+    body: '{"type":"validation_failed","message":"Validation failed","errors":{"household":["Household must exist"]}}'
+- recorded: 2020-01-15T19:44:28.990Z
+  request:
+    method: POST
+    uri: http://localhost:5000/membership_payments
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"74fba909-10cd-4026-b673-3c3200f21b15","receipt_number":"12345","payment_date":"2012-01-04","annual_contribution_fee":2300,"qualifying_beneficiaries_fee":2000,"registration_fee":0,"penalty_fee":2000,"card_replacement_fee":2000,"other_fee":1234,"household_enrollment_record_id":"173e03f2-6e56-4bd3-a9df-ddf11802c9c6"}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"50bad704524fba4cc2a07d7e7630f7f2"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 74ac125d-4a2f-4651-bebb-c6d8febb0096
+      X-Runtime: '0.037365'
+    body: '{"id":"74fba909-10cd-4026-b673-3c3200f21b15","receipt_number":"12345","payment_date":"2012-01-04","annual_contribution_fee":2300,"registration_fee":0,"qualifying_beneficiaries_fee":2000,"penalty_fee":2000,"other_fee":1234,"card_replacement_fee":2000,"household_enrollment_record_id":"173e03f2-6e56-4bd3-a9df-ddf11802c9c6"}'
+- recorded: 2020-01-15T19:44:29.149Z
+  request:
+    method: POST
+    uri: http://localhost:5000/membership_payments
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"e13bebff-0188-4dff-8d28-3ee3a3bcdc9e","receipt_number":"12345","payment_date":"2012-01-04","annual_contribution_fee":2300,"qualifying_beneficiaries_fee":2000,"registration_fee":0,"penalty_fee":2000,"card_replacement_fee":2000,"other_fee":1234,"household_enrollment_record_id":"21fba022-22cd-4026-b673-7c8222f22b23"}'
+  response:
+    status: 422
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Vary: Origin
+      X-Request-Id: 7027b9e5-75ee-436a-8862-84e996bc1436
+      X-Runtime: '0.041650'
+    body: '{"type":"validation_failed","message":"Validation failed","errors":{"household_enrollment_record":["Household enrollment record must exist"]}}'
+- recorded: 2020-01-15T19:44:29.332Z
+  request:
+    method: POST
+    uri: http://localhost:5000/member_enrollment_records
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"25fba009-22cd-4026-b333-a0ea46080d9a","member_id":"738a6308-08c1-4a4a-b103-7c8200f21b33","user_id":93,"enrolled_at":"2018-03-23T08:10:36.307Z","note":"member was not present during enrollment","membership_number":null,"enrollment_period_id":2}'
+  response:
+    status: 201
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"84fd5b61a1193a4f79e9a3031044c1e0"
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 7f890162-9017-4540-b0d0-7c39705b267c
+      X-Runtime: '0.050009'
+    body: '{"id":"25fba009-22cd-4026-b333-a0ea46080d9a","enrolled_at":"2018-03-23T11:10:36.307+03:00","user_id":93,"member_id":"738a6308-08c1-4a4a-b103-7c8200f21b33","note":null,"membership_number":"328-483-948","enrollment_period_id":2}'
+- recorded: 2020-01-15T19:44:29.492Z
+  request:
+    method: POST
+    uri: http://localhost:5000/member_enrollment_records
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+    body: '{"id":"74fba009-22cd-4026-b333-a0ea46080d3d","member_id":"21fba022-22cd-4026-b673-7c8222f22b23","user_id":93,"enrolled_at":"2018-03-23T08:10:36.307Z","note":null,"membership_number":null,"enrollment_period_id":2}'
+  response:
+    status: 422
+    headers:
+      Content-Type: application/json; charset=utf-8
+      Transfer-Encoding: chunked
+      Vary: Origin
+      X-Request-Id: 00ab529b-4bba-46f5-bf46-d41059ae3bd1
+      X-Runtime: '0.050176'
+    body: '{"type":"validation_failed","message":"Validation failed","errors":{"member":["Member must exist"]}}'
+- recorded: 2020-01-15T19:44:30.226Z
+  request:
+    method: GET
+    uri: http://localhost:5000/household_enrollment_records
+    headers:
+      Authorization: Token oZiQq34B.tVRPstiFudy2bMwC2zM1RKTH13pbDD11
+  response:
+    status: 200
+    headers:
+      Cache-Control: max-age=0, private, must-revalidate
+      Content-Type: application/json; charset=utf-8
+      ETag: W/"e656292ed5f61a8a33842dec9fd066d1"
+      Last-Modified: Fri, 06 Dec 2019 17:27:07 GMT
+      Transfer-Encoding: chunked
+      Vary: Accept-Encoding, Origin
+      X-Request-Id: 137669e0-0095-4776-9565-7a5941809f5c
+      X-Runtime: '0.596894'
+    body: '[{"id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","enrolled_at":"2017-02-11T17:20:04.266+03:00","administrative_division_id":14,"address":null,"members":[{"id":"b8f21a46-c731-4de5-b6da-eeee53ef2e50","card_id":"RWI944951","full_name":"Willia Konopelski
+      Roob V","gender":"F","birthdate":"1974-08-26","birthdate_accuracy":"D","phone_number":"0700223137","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"59150931-1feb-4fc0-aae0-6ac4242f6297","card_id":"RWI985772","full_name":"Cleopatra
+      Welch Reinger","gender":"M","birthdate":"1972-11-11","birthdate_accuracy":"D","phone_number":"0772635240","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"f9b9baf8-5123-4869-b0f6-e6f3e667e816","card_id":"RWI948258","full_name":"Sueann
+      Schultz Stroman","gender":"F","birthdate":"1986-07-02","birthdate_accuracy":"D","phone_number":"0787170797","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"be8e4eed-c2f8-4b1d-b68e-1bb247afdbdb","card_id":"RWI971391","full_name":"Mrs.
+      Kate Labadie Senger","gender":"M","birthdate":"2008-06-25","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"9711c2be-17a5-4c64-9ac5-ea0544ef72ea","card_id":"RWI649492","full_name":"Mechelle
+      Heaney Harvey","gender":"F","birthdate":"2003-08-10","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"dca143d4-6fb1-4f6c-a392-4fe272d8d425","card_id":"RWI692191","full_name":"Ms.
+      Fausto Friesen Gutkowski","gender":"M","birthdate":"2013-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"1f7da0d4-2f1b-4f64-9f32-163540bf19f5","card_id":"RWI643848","full_name":"Larhonda
+      Legros Gaylord II","gender":"F","birthdate":"1995-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"faeea010-a634-45d2-ad44-7e2696357b52","card_id":"RWI942755","full_name":"Oda
+      Pfannerstill Bernier V","gender":"M","birthdate":"2015-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"34b5f57e-2567-41a2-b5e6-1faeebef9e12","card_id":"RWI372373","full_name":"Anabel
+      Hirthe Walsh","gender":"F","birthdate":"1998-06-13","birthdate_accuracy":"D","phone_number":"0783054220","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"60147217-5506-41a9-bb74-c4b76266d990","card_id":"RWI612802","full_name":"Lori
+      Weimann Oberbrunner Jr.","gender":"F","birthdate":"2016-02-12","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null},{"id":"faf39992-136a-412c-9ade-8e11208ceb9a","card_id":"RWI223545","full_name":"Dr.
+      Stacia Leuschke Bednar","gender":"M","birthdate":"2001-05-12","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6fdeb7b5-32a3-4530-8eb0-50c4eee76f44","photo_url":null,"enrolled_at":"2017-02-11T17:20:04.266+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"9ecc67e2-7f79-41af-852c-de665e5ce280","enrolled_at":"2017-02-11T16:50:00.645+03:00","administrative_division_id":18,"address":null,"members":[{"id":"0fb52b9f-ffb0-4641-b947-699ea78edeb7","card_id":"RWI278676","full_name":"Kazuko
+      Dooley Kovacek","gender":"M","birthdate":"2014-10-01","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ecc67e2-7f79-41af-852c-de665e5ce280","photo_url":null,"enrolled_at":"2017-02-11T16:50:00.645+03:00","archived_at":null,"archived_reason":null},{"id":"739aa8f5-0d1f-4eed-873b-d9677b4700c7","card_id":"RWI559970","full_name":"Vernetta
+      Emard Ankunding","gender":"F","birthdate":"2016-07-11","birthdate_accuracy":"M","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ecc67e2-7f79-41af-852c-de665e5ce280","photo_url":null,"enrolled_at":"2017-02-11T16:50:00.645+03:00","archived_at":null,"archived_reason":null},{"id":"ae206497-aeb9-444a-9f47-a7c4cc752aea","card_id":"RWI001342","full_name":"Trenton
+      Frami Emard","gender":"M","birthdate":"1982-12-16","birthdate_accuracy":"D","phone_number":"0782874441","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ecc67e2-7f79-41af-852c-de665e5ce280","photo_url":null,"enrolled_at":"2017-02-11T16:50:00.645+03:00","archived_at":null,"archived_reason":null},{"id":"d68b686c-ac54-43b8-a298-383c46135b4f","card_id":"RWI252446","full_name":"Santo
+      Hahn Price","gender":"F","birthdate":"2005-08-20","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ecc67e2-7f79-41af-852c-de665e5ce280","photo_url":null,"enrolled_at":"2017-02-11T16:50:00.645+03:00","archived_at":null,"archived_reason":null},{"id":"ed8ce231-002d-4455-88d3-1be2ffb84f65","card_id":"RWI702873","full_name":"Darnell
+      Gibson Ankunding","gender":"F","birthdate":"1988-02-11","birthdate_accuracy":"Y","phone_number":"0783790478","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ecc67e2-7f79-41af-852c-de665e5ce280","photo_url":null,"enrolled_at":"2017-02-11T16:50:00.645+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","enrolled_at":"2017-02-11T17:44:38.845+03:00","administrative_division_id":18,"address":null,"members":[{"id":"278d6e7e-170a-4a45-893f-1de7a5af6726","card_id":"RWI073869","full_name":"Dwain
+      Yundt Muller","gender":"M","birthdate":"2007-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"920344a4-e0fc-4960-9936-fad6afb08990","card_id":"RWI739502","full_name":"Tamica
+      Jast Kuhlman","gender":"F","birthdate":"1958-08-02","birthdate_accuracy":"D","phone_number":"0773511521","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"d8c41262-79cc-4f6d-98ad-aba131a0ed6f","card_id":"RWI935071","full_name":"Duane
+      White Hoppe","gender":"F","birthdate":"2000-08-09","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"2ba87fd6-283c-48be-9a66-8ea9457e3b00","card_id":"RWI246160","full_name":"Daniel
+      Stamm Baumbach V","gender":"F","birthdate":"1993-11-12","birthdate_accuracy":"D","phone_number":"0779037427","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"e7d6fe3b-931a-4403-8531-1173c121ce1a","card_id":"RWI457640","full_name":"Dortha
+      Kassulke Jacobs","gender":"F","birthdate":"1959-09-15","birthdate_accuracy":"D","phone_number":"0774314645","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"45a44825-955e-41c0-905d-fee5e0f5593a","card_id":"RWI947014","full_name":"Estela
+      Ferry Denesik","gender":"F","birthdate":"2016-07-28","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"b0f8d245-5381-46ac-bb0d-33fe807ba02e","card_id":"RWI149456","full_name":"Dr.
+      Roosevelt Weber Walsh","gender":"F","birthdate":"2004-06-20","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"f3cd92f2-ea51-49b8-a1d2-e06db057faf9","card_id":"RWI816757","full_name":"Logan
+      Hermann Gutkowski","gender":"M","birthdate":"2013-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"62dc61ba-c689-49a0-92cc-e37a8bdb202c","card_id":"RWI390271","full_name":"Roberto
+      Feil Halvorson PhD","gender":"F","birthdate":"2009-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null},{"id":"95ba1ff9-227f-4c1a-889b-8daf66497b01","card_id":"RWI581990","full_name":"Mr.
+      In Carter Trantow","gender":"F","birthdate":"2011-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"6816bd68-7590-4bf6-88ee-751e50e6ea8b","photo_url":null,"enrolled_at":"2017-02-11T17:44:38.845+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","enrolled_at":"2017-02-11T16:48:10.657+03:00","administrative_division_id":18,"address":null,"members":[{"id":"f6dd240c-e7d3-452e-94d2-e583ef07a74c","card_id":"RWI091882","full_name":"Madalyn
+      Shields Aufderhar","gender":"F","birthdate":"1941-09-12","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"0ee6e110-2f1f-4d0e-a234-ced845a8807c","card_id":"RWI559999","full_name":"Mrs.
+      Carson Graham Schumm","gender":"F","birthdate":"2015-06-11","birthdate_accuracy":"M","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"0c6dc65d-e8ff-4bcc-82b1-5fb498454e29","card_id":"RWI103675","full_name":"Tracy
+      Fisher Orn","gender":"F","birthdate":"1964-10-16","birthdate_accuracy":"D","phone_number":"0774951480","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"952bab93-d80d-49c1-9091-86328b997551","card_id":"RWI738713","full_name":"Elden
+      Daniel Weber I","gender":"M","birthdate":"2006-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"de040189-8408-4772-ab44-a11bc251626b","card_id":"RWI300353","full_name":"Winfred
+      Paucek Murazik","gender":"M","birthdate":"2006-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"d658c406-6447-4710-a1ad-154b7d2aa94a","card_id":"RWI112117","full_name":"Garfield
+      Rodriguez Wunsch","gender":"F","birthdate":"2004-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"ff23bc68-6cf2-4dd5-8567-ab0b23b4b6b9","card_id":"RWI759456","full_name":"Ms.
+      Rayford Pouros Pacocha","gender":"M","birthdate":"2013-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"9dcaebdd-98e3-40a3-ad25-40919c33ddbd","card_id":"RWI182145","full_name":"Jarrod
+      Marquardt Parker Sr.","gender":"M","birthdate":"1998-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"4bfc172c-eb66-463a-8d60-7bf79bbf63bd","card_id":"RWI888607","full_name":"Gertrud
+      Nader Olson","gender":"M","birthdate":"2007-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"8c5a72e9-c42a-41ce-b4b3-a8a8c0d6a7ab","card_id":"RWI392675","full_name":"Freeda
+      Gleason Frami","gender":"M","birthdate":"2005-02-11","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"f3acecf7-e70a-4be4-9bb5-daf8e1c4395a","card_id":"RWI610743","full_name":"Dr.
+      Joeann Stanton Abshire","gender":"F","birthdate":"1991-07-31","birthdate_accuracy":"D","phone_number":"0787171906","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null},{"id":"f9fa7d89-3b0f-49c2-9b09-ad83eed7486f","card_id":"RWI699852","full_name":"Dwayne
+      Grant Hills","gender":"M","birthdate":"1951-11-14","birthdate_accuracy":"D","phone_number":"0789284564","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9a5e0f0b-793b-4753-8a54-d675ecc0056a","photo_url":null,"enrolled_at":"2017-02-11T16:48:10.657+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"a31a7da8-d146-40fe-bd16-201e13a544da","enrolled_at":"2017-02-13T09:22:53.295+03:00","administrative_division_id":16,"address":null,"members":[{"id":"4d8eb2a8-5166-4e24-bb1c-e24459232bcf","card_id":"RWI410894","full_name":"Eddy
+      Carroll Doyle","gender":"M","birthdate":"1989-04-20","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a31a7da8-d146-40fe-bd16-201e13a544da","photo_url":null,"enrolled_at":"2017-02-13T09:22:53.295+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","enrolled_at":"2017-02-13T09:39:43.490+03:00","administrative_division_id":16,"address":null,"members":[{"id":"3856fbb0-8a29-4f90-aed2-eb144441cdbe","card_id":"RWI264472","full_name":"Ms.
+      Ted Brakus Rath","gender":"F","birthdate":"1980-05-05","birthdate_accuracy":"D","phone_number":"0780406767","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"38eca314-321b-462c-8cb8-dc6587bed88a","card_id":"RWI761547","full_name":"Jewel
+      Langworth O''Keefe PhD","gender":"F","birthdate":"2015-06-13","birthdate_accuracy":"M","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"76f77996-c8cb-44ca-94fa-135d8ff48b12","card_id":"RWI662968","full_name":"Santo
+      Rau Bode","gender":"M","birthdate":"2001-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"19400991-af5d-4262-91ef-0a25922f4974","card_id":"RWI337357","full_name":"Vern
+      Hodkiewicz Kunde","gender":"M","birthdate":"2004-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"048a54c7-0ac6-44bf-9769-b664a68f016f","card_id":"RWI635908","full_name":"Juanita
+      Kunze Witting I","gender":"M","birthdate":"2006-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"4146c754-83b0-4eff-b7e5-746861aa0c43","card_id":"RWI176629","full_name":"Jayna
+      Sawayn Berge DVM","gender":"M","birthdate":"1980-11-18","birthdate_accuracy":"D","phone_number":"0772542538","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null},{"id":"447c9244-ab89-40cb-81f8-9d5f1c33492d","card_id":"RWI468716","full_name":"Stephan
+      Feil Beatty","gender":"M","birthdate":"2008-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"fbd76a70-14f1-45c7-a3b9-e10c19ab65c6","photo_url":null,"enrolled_at":"2017-02-13T09:39:43.490+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"9cd44243-da91-4216-9bbc-89bd4525948d","enrolled_at":"2017-02-13T09:42:44.140+03:00","administrative_division_id":16,"address":null,"members":[{"id":"c3cf9c5a-72c5-457c-ac29-1c298d9c649b","card_id":"RWI363557","full_name":"Phillip
+      Kemmer Hyatt","gender":"M","birthdate":"2002-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"a6d4c8df-c250-45a0-9ebb-d01da0c7ffd2","card_id":"RWI743387","full_name":"Bradley
+      Stoltenberg Rolfson","gender":"M","birthdate":"2009-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"a08b00fa-2cb3-41c0-89b3-441a3cbfb468","card_id":"RWI315288","full_name":"Jenny
+      West Stracke","gender":"M","birthdate":"2007-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"bbf16468-467f-4064-a716-1b41cb87f185","card_id":"RWI829644","full_name":"Damion
+      Ratke Bins","gender":"F","birthdate":"2003-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"7e12f586-5a41-46e1-b662-1418c18e2a5c","card_id":"RWI130571","full_name":"Cristie
+      Cole Cronin","gender":"M","birthdate":"2014-06-29","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-06-29T15:55:01.332+03:00","archived_at":null,"archived_reason":null},{"id":"330ecc83-be3b-4ea4-9dde-46a78bc725b8","card_id":"RWI852203","full_name":"Refugia
+      Lesch Bartell","gender":"F","birthdate":"1998-06-29","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-06-29T15:55:01.332+03:00","archived_at":null,"archived_reason":null},{"id":"f7d3a807-c8e8-40f0-9eac-3f2e1b56ca6d","card_id":"RWI182252","full_name":"August
+      Nolan Quigley","gender":"F","birthdate":"1967-08-08","birthdate_accuracy":"D","phone_number":"0784340858","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"80dbb9c7-5dcf-4465-a00c-038a7bf31e37","card_id":"RWI955979","full_name":"Gonzalo
+      Hettinger Auer","gender":"F","birthdate":"2004-10-28","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-10-28T13:08:23.370+03:00","archived_at":null,"archived_reason":null},{"id":"7b1c93c9-4990-4297-9353-bbd54f773693","card_id":"RWI817571","full_name":"Mathew
+      Dietrich Luettgen","gender":"F","birthdate":"2012-10-28","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-10-28T13:08:23.370+03:00","archived_at":null,"archived_reason":null},{"id":"6524f4b6-6e0a-42db-af08-b69f26611444","card_id":"RWI046266","full_name":"Eddie
+      Collins Funk","gender":"M","birthdate":"1969-01-01","birthdate_accuracy":"D","phone_number":"0777381165","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null},{"id":"e19e427a-1df7-46f9-b9a3-5429b4085a16","card_id":"RWI826492","full_name":"Adam
+      Schultz Johns","gender":"M","birthdate":"2007-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9cd44243-da91-4216-9bbc-89bd4525948d","photo_url":null,"enrolled_at":"2017-02-13T09:42:44.140+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","enrolled_at":"2017-02-13T09:47:08.346+03:00","administrative_division_id":16,"address":null,"members":[{"id":"1d596035-b708-486c-b396-93fc484c09d1","card_id":"RWI561987","full_name":"Alyssa
+      Kris Ferry Sr.","gender":"M","birthdate":"1992-03-08","birthdate_accuracy":"Y","phone_number":"0778370611","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"da46ed81-c352-4f78-a5be-3c91f166e6a3","card_id":"RWI649901","full_name":"Eric
+      Schuster Mitchell","gender":"F","birthdate":"2007-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"4bc14eda-7c6c-47f9-9fd3-c8a388586daf","card_id":"RWI955753","full_name":"Herschel
+      Hagenes Flatley","gender":"F","birthdate":"2012-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"db0251a4-99b4-49c4-99a5-bccbcb8106c9","card_id":"RWI659098","full_name":"Randy
+      Keebler Labadie","gender":"M","birthdate":"2011-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"5187733f-ca4b-4fd0-9ca9-0762ccdcfa3e","card_id":"RWI313904","full_name":"Sung
+      Kutch Shields","gender":"F","birthdate":"2011-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"8395d23d-acdf-49fb-9670-a5c0a23d6067","card_id":"RWI253624","full_name":"Lenita
+      Smith Dietrich","gender":"M","birthdate":"2013-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"ecbde11b-d395-4bd2-b43d-20c2902e6b73","card_id":"RWI464204","full_name":"Ernest
+      Kertzmann Ledner IV","gender":"F","birthdate":"2009-03-08","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"c7290549-cdff-4471-90db-3b2c6431de28","card_id":"RWI289395","full_name":"Mrs.
+      Elroy Hammes Fahey","gender":"F","birthdate":"2015-01-20","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T09:47:08.346+03:00","archived_at":null,"archived_reason":null},{"id":"41b6139b-b22e-43bb-a3ff-498d14ed6894","card_id":"RWI597992","full_name":"Darell
+      Upton Fritsch","gender":"F","birthdate":"1995-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2017-02-13T10:46:23.460+03:00","archived_at":null,"archived_reason":null},{"id":"71e89664-91b0-45c6-8be6-6269efd54e19","card_id":"RWI541314","full_name":"Miss
+      Lovella Mraz Kertzmann","gender":"M","birthdate":"2018-04-07","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"9ca9ce5c-e6be-46cf-ac5d-2748756886ea","photo_url":null,"enrolled_at":"2018-04-11T13:23:09.618+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"0e6c1878-df47-4857-9ed6-ee8ac8cf171d","enrolled_at":"2017-02-13T09:50:44.899+03:00","administrative_division_id":16,"address":null,"members":[{"id":"197c1013-dd91-4faa-b8a7-ad767dd47e1a","card_id":"RWI795447","full_name":"Mrs.
+      Genaro Haag Sporer","gender":"M","birthdate":"1983-06-15","birthdate_accuracy":"D","phone_number":"0774346513","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"0e6c1878-df47-4857-9ed6-ee8ac8cf171d","photo_url":null,"enrolled_at":"2017-02-13T09:50:44.899+03:00","archived_at":null,"archived_reason":null},{"id":"c7eebbbd-8902-445b-9dd7-2d57a14c15ee","card_id":"RWI124789","full_name":"Kasey
+      Herman Mertz","gender":"F","birthdate":"1988-11-15","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"0e6c1878-df47-4857-9ed6-ee8ac8cf171d","photo_url":null,"enrolled_at":"2017-02-13T09:50:44.899+03:00","archived_at":null,"archived_reason":null},{"id":"5cd07a4d-afca-4ac6-9b93-95a6f94e4a6a","card_id":"RWI032331","full_name":"Dr.
+      Lisabeth Muller Thompson","gender":"F","birthdate":"2002-09-30","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"0e6c1878-df47-4857-9ed6-ee8ac8cf171d","photo_url":null,"enrolled_at":"2017-02-13T09:50:44.899+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null},{"id":"a1d32882-0df7-42ca-956b-5fd3390f1731","enrolled_at":"2017-02-13T09:50:05.190+03:00","administrative_division_id":16,"address":null,"members":[{"id":"856ed1a8-a3d3-46ed-862e-6c4cd7854909","card_id":"RWI098795","full_name":"Napoleon
+      Gutkowski Turner","gender":"F","birthdate":"2017-03-21","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-03-22T14:11:38.129+03:00","archived_at":null,"archived_reason":null},{"id":"f545631a-57bd-4d1f-a81a-065798884fc3","card_id":"RWI300916","full_name":"Ms.
+      Sheilah Kutch Bahringer","gender":"M","birthdate":"2002-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:57:27.402+03:00","archived_at":null,"archived_reason":null},{"id":"b766f8cb-12cb-49d3-a6bc-afd6e9d08465","card_id":"RWI425879","full_name":"Gail
+      Cremin Ratke","gender":"F","birthdate":"2007-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null},{"id":"c2060b8f-3242-4823-98fb-f8fb7ef7cb24","card_id":"RWI909033","full_name":"James
+      Gusikowski Bartoletti II","gender":"F","birthdate":"1999-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null},{"id":"e5a6fce3-7455-4098-b06a-d72a8da304ce","card_id":"RWI330343","full_name":"Israel
+      Rath Weber","gender":"M","birthdate":"2015-10-03","birthdate_accuracy":"D","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null},{"id":"9b3da025-5f43-4b2e-9b47-f780c234ab15","card_id":"RWI347701","full_name":"Ms.
+      Venice Dooley Howe","gender":"F","birthdate":"2017-01-13","birthdate_accuracy":"M","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:57:27.402+03:00","archived_at":null,"archived_reason":null},{"id":"1a532969-a423-4abc-945e-bb2eaec3c181","card_id":"RWI233607","full_name":"Savannah
+      Bernier Johnson","gender":"M","birthdate":"1997-11-11","birthdate_accuracy":"D","phone_number":"0779957539","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null},{"id":"3ce24bc2-ed48-4265-9bcc-9be3a86c00eb","card_id":"RWI231732","full_name":"Rudolf
+      Mosciski Beahan Jr.","gender":"M","birthdate":"2006-02-13","birthdate_accuracy":"Y","phone_number":null,"profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null},{"id":"58d73517-ab6f-45ca-a94b-2640c4d21ab4","card_id":"RWI963474","full_name":"Rafaela
+      Kreiger Kub","gender":"F","birthdate":"1982-02-13","birthdate_accuracy":"Y","phone_number":"0787600008","profession":null,"membership_number":null,"medical_record_number":null,"relationship_to_head":null,"household_id":"a1d32882-0df7-42ca-956b-5fd3390f1731","photo_url":null,"enrolled_at":"2017-02-13T09:50:05.190+03:00","archived_at":null,"archived_reason":null}],"member_enrollment_records":[],"active_membership_payments":[],"active_household_enrollment_record":null}]'

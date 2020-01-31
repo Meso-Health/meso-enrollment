@@ -1,0 +1,93 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/primary</item>
+
+        <item name="android:windowBackground">@color/gray1</item>
+
+        <!-- colorControlNormal affects non-text input colors (e.g. checkboxes, spinner icon) -->
+        <!--<item name="colorControlNormal">@color/gray4</item>-->
+        <!--<item name="colorControlActivated">@color/primary</item>-->
+        <!--<item name="colorControlHighlight">@color/primary</item>-->
+
+        <item name="android:textColor">@color/gray9</item>
+        <item name="android:textColorHint">@color/gray6</item>
+
+        <item name="editTextStyle">@style/EditTextStyle</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+
+        <!-- affects all text sizes - even dialogs -->
+        <!--<item name="android:textSize">@dimen/fontSize16</item>-->
+
+        <!-- note: overriding buttonStyle also affects buttons in dialogs such as close buttons -->
+        <!--<item name="android:buttonStyle">@style/ButtonBase</item>-->
+        <!--<item name="buttonStyle">@style/ButtonBase</item>-->
+    </style>
+
+    <style name="AlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonStyle">@style/FlatButtonStyle</item>
+    </style>
+
+    <style name="Label" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">@dimen/fontSize12</item>
+    </style>
+
+    <style name="PanelHeader">
+        <item name="android:textColor">@color/gray8</item>
+        <item name="android:textSize">@dimen/fontSize14</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="StatusKey">
+        <item name="android:textSize">@dimen/fontSize16</item>
+    </style>
+
+    <style name="StatusValue">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">@dimen/fontSize14</item>
+    </style>
+
+    <style name="StatusVersion">
+        <item name="android:textColor">@color/gray6</item>
+        <item name="android:textSize">@dimen/fontSize16</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:textSize">@dimen/fontSize16</item>
+        <item name="android:backgroundTint">@color/gray4</item>
+        <item name="android:drawableTint">@color/gray6</item>
+    </style>
+
+    <style name="RaisedButtonBase" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/gray9</item>
+        <item name="android:textSize">@dimen/fontSize16</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="PrimaryButton" parent="RaisedButtonBase">
+        <item name="android:background">@drawable/button_primary_selector</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SecondaryButton" parent="RaisedButtonBase">
+        <item name="android:background">@drawable/button_secondary_selector</item>
+    </style>
+
+    <style name="FlatButtonStyle" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/fontSize16</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+</resources>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- GENERAL LABELS -->
+    <string name="blank" translatable="false" />
+    <string name="ok">OK</string>
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="modal_save">@string/save</string>
+    <string name="modal_cancel">@string/cancel</string>
+    <string name="exit_form_alert">Are you sure you want to exit?</string>
+    <string name="generic_save_error">An unknown error occurred. Try again later.</string>
+    <string name="scan_member_card">Scan card</string>
+    <string name="date_label" translatable="false">Date</string>
+    <string name="time_label" translatable="false">Time</string>
+    <string name="price_with_currency" translatable="false">%1$s %2$s</string>
+
+    <!-- CONSTANTS -->
+    <string name="blank_membership_number" translatable="false">--</string>
+
+    <!-- Gender -->
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!-- DateAccuracy -->
+    <string name="days">Days</string>
+    <string name="months">Months</string>
+    <string name="years">Years</string>
+
+    <!-- Profession -->
+    <string name="farmer">Farmer</string>
+    <string name="student">Student</string>
+    <string name="baby">Baby</string>
+    <string name="trader_or_merchant">Trader/Merchant</string>
+    <string name="job_seeker">Job Seeker</string>
+    <string name="housewife">Housewife</string>
+    <string name="stay_home_husband">Stay home husband</string>
+    <string name="daily_laborer">Day Laborer</string>
+    <string name="disabled">Disabled</string>
+    <string name="other">Other</string>
+    <string name="other_profession_label" tools:ignore="MissingTranslation">Other Profession</string>
+
+    <!-- RelationshipToHead -->
+    <string name="self">Self</string>
+    <string name="child">Child</string>
+    <string name="spouse">Spouse</string>
+    <string name="house_staff">House staff</string>
+    <string name="parent">Parent</string>
+    <string name="grandchild">Grand child</string>
+    <string name="grandparent">Grand parent</string>
+
+    <!-- ArchivedReason -->
+    <string name="death">Death</string>
+    <string name="divorce">Divorce</string>
+    <string name="formed_own_household">Formed own household</string>
+    <string name="no_longer_eligible">No longer eligible</string>
+    <string name="relocation">Relocation</string>
+
+    <!-- Paying -->
+    <string name="paying">Paying</string>
+    <string name="indigent">Indigent</string>
+
+    <!-- ACTIVITIES AND FRAGMENTS -->
+
+    <!-- AuthenticationActivity -->
+    <string name="enrollment">Enrollment</string>
+    <string name="login_username_label">Username</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_button_text">Log In</string>
+    <string name="logging_in">Logging in…</string>
+    <string name="login_generic_failure_message">Failed to login</string>
+    <string name="enrollment_data_misconfigured_message" translatable="false">Enrollment data is misconfigured, please contact support</string>
+    <string name="login_wrong_username_or_password_message">The provided username/password combination is incorrect</string>
+    <string name="login_progress_message">Logging in…</string>
+    <string name="login_connectivity_error">Cannot login due to poor connectivity</string>
+    <string name="login_phone_offline_error">Cannot login because phone is offline</string>
+    <string name="login_server_offline_error">Cannot login because server is offline</string>
+    <string name="login_permission_error">This user is not allowed to enroll members</string>
+
+    <!-- QrCodeActivity -->
+    <string name="scan_qr_code_help_text">@string/scan_member_card</string>
+
+    <!-- ScanNewMemberCardActivity -->
+    <string name="scan_new_member_card_help_text">@string/scan_member_card</string>
+    <string name="card_already_assigned_error">This card is already assigned to another member.</string>
+    <string name="invalid_card_error">This code (%s) is not a valid card ID</string>
+
+    <!-- SearchHouseholdByCardActivity -->
+    <string name="search_by_member_card">Search by member card</string>
+
+    <!-- PhotoActivity -->
+    <string name="member_photo_overlay_text">Take photo of member</string>
+
+    <!-- BaseService -->
+    <string name="credentials_expired_error_message" translatable="false">Credentials expired</string>
+    <string name="phone_offline_error_message" translatable="false">Phone is offline</string>
+    <string name="server_offline_error_message" translatable="false">Server is offline</string>
+    <string name="poor_connectivity_error_message" translatable="false">Poor connectivity</string>
+
+    <!-- HomeFragment -->
+    <string name="enroll">Enroll</string>
+    <string name="amend">Amend</string>
+    <string name="recent">Recent</string>
+    <string name="reports">Reports</string>
+    <string name="status">Status</string>
+    <string name="renew">Renew</string>
+
+    <!-- RecentEditsFragment -->
+    <string name="menu_stats_label">Reporting</string>
+    <string name="menu_status_label">Status</string>
+    <string name="menu_switch_language" translatable="false">Switch Language</string>
+    <string name="menu_logout_label">Logout</string>
+    <string name="log_out_alert">Are you sure you want to log out?</string>
+    <string name="log_out_alert_message">Any unsynced data will be deleted.</string>
+
+    <string name="members_enrolled_label">Members</string>
+    <string name="beneficiaries_enrolled_label">Beneficiaries</string>
+    <string name="total_collected_label">Total</string>
+
+    <!-- StatsFragment -->
+    <string name="summary_stats_panel_header_text">@string/total</string>
+    <string name="paying_filter_label">Paying/Indigent</string>
+    <string name="gender_filter_label">Male/Female</string>
+    <string name="new_enrollment_type">New</string>
+    <string name="renewal_enrollment_type">Renewal</string>
+    <string name="renewal_filter_label">New/Renewal</string>
+    <string name="not_filtered_value">All</string>
+    <string name="household_admin_division_spinner_prompt">Select %s…</string>
+    <string name="household_admin_division_validation_error">Admin division is required</string>
+
+    <!-- StatusFragment -->
+    <string name="menu_sync_now">Sync now</string>
+
+    <string name="current_user_label">Current user</string>
+
+    <string name="fetch_title">Downloads</string>
+    <string name="last_fetched_administrative_divisions_label">Kushets</string>
+    <string name="last_fetched_households_label">Households and Members</string>
+    <string name="last_fetched_member_photos_label">Member photos</string>
+
+    <string name="sync_data_title">Uploads (Data)</string>
+    <string name="unsynced_households_label">Households</string>
+    <string name="unsynced_household_enrollment_records_label">Household enrollments</string>
+    <string name="unsynced_members_label">Members</string>
+    <string name="unsynced_member_enrollment_records_label">Member enrollments</string>
+    <string name="unsynced_payments_label">Payments</string>
+
+    <string name="sync_photos_title">Uploads (Photos)</string>
+    <string name="unsynced_member_photos_label">Member photos</string>
+
+    <string name="app_version">Enrollment %1$s</string>
+    <string name="android_version">Android %1$s</string>
+
+    <string name="last_successful_run_label">Last successful run</string>
+    <string name="all_synced">All uploaded</string>
+    <string name="all_fetched">All downloaded</string>
+    <string name="waiting_to_sync">to upload</string>
+    <string name="waiting_to_fetch">to download</string>
+    <string name="never">never</string>
+
+    <string name="fetch_admin_divisions_error_label" translatable="false">Download Kushets</string>
+    <string name="fetch_enrollment_periods_error_label" translatable="false">Download Enrollment Periods</string>
+    <string name="fetch_households_error_label" translatable="false">Download Households and Members</string>
+    <string name="fetch_member_photos_error_label" translatable="false">Download Member Photos</string>
+    <string name="sync_households_error_label" translatable="false">Upload Households</string>
+    <string name="sync_members_error_label" translatable="false">Upload Members</string>
+    <string name="sync_household_enrollment_records_error_label" translatable="false">Upload Household Enrollment Records</string>
+    <string name="sync_member_enrollment_records_error_label" translatable="false">Upload Member Enrollment Records</string>
+    <string name="sync_payments_error_label" translatable="false">Upload Payments</string>
+    <string name="sync_member_photos_error_label" translatable="false">Upload Member Photos</string>
+
+    <string name="no_internet_title" translatable="false">No internet connection</string>
+    <string name="no_internet_prompt" translatable="false">Please connect the device to the internet and try again.</string>
+
+    <!-- SearchFragment -->
+    <string name="search_name">Search name</string>
+    <string name="search_title">Search</string>
+    <string name="membership_number_search_label" tools:ignore="MissingTranslation">Search Beneficiary ID</string>
+    <string name="membership_number_label">Beneficiary #</string>
+    <string name="slash" translatable="false">/</string>
+    <string name="two_zeroes_placeholder" translatable="false">00</string>
+    <string name="three_zeroes_placeholder" translatable="false">000</string>
+    <string name="six_zeroes_placeholder" translatable="false">000000</string>
+    <string name="search_action">Search</string>
+    <string name="card_not_found_error_message">QR Card is not registered</string>
+
+    <!-- MemberSearchFragment -->
+    <string name="member_no_search_results_text" translatable="false">No search results found. Please try again.</string>
+
+
+    <!-- MemberNotFoundFragment -->
+    <string name="member_not_found_fragment_label">Search</string>
+    <string name="member_not_found_message">Error loading member</string>
+    <string name="member_not_found_detail">The member is not registered to this phone</string>
+    <string name="manual_renew_button_text">Renew manually</string>
+
+    <!-- NewHouseholdFragment -->
+    <string name="enrollment_date">Enrollment date</string>
+    <string name="enrollment_date_missing_error">Enrollment date is required</string>
+    <string name="enrollment_date_validation_error" translatable="false">Enrollment date cannot be before the start of the enrollment period (%s)</string>
+
+    <string name="house_number_description">House number (optional)</string>
+
+    <!-- NewMemberFragment -->
+    <string name="gender_field_label">Gender</string>
+    <string name="gender_button_male">@string/male</string>
+    <string name="gender_button_female">@string/female</string>
+    <string name="name_field_label">Full Name</string>
+    <string name="relationship_to_member_label">Relationship to member</string>
+    <string name="relationship_to_member_prompt">Select relationship to member…</string>
+    <string name="profession_label">Profession</string>
+    <string name="profession_prompt">Select profession…</string>
+    <string name="phone_number_field_label">Phone Number (optional)</string>
+    <string name="medical_record_number_field_label">Medical Record Number (optional)</string>
+    <string name="member_card_panel_header_text">Card &amp; Photo</string>
+    <string name="member_card_field_label">Card</string>
+    <string name="scan_member_card_button_text">@string/scan_member_card</string>
+    <string name="photo_field_label">Photo</string>
+    <string name="take_photo_button_text">Take photo</string>
+    <string name="add_new_beneficiary">Add Another Beneficiary</string>
+
+    <string name="gender_validation_error">Gender is required</string>
+    <string name="name_validation_error">Name is required</string>
+    <string name="name_length_validation_error">%s names are required</string>
+    <string name="birthdate_validation_error">Birthdate is required</string>
+    <string name="relationship_to_member_validation_error">Relationship to member is required</string>
+    <string name="profession_validation_error">Profession is required</string>
+    <string name="medical_record_number_validation_error">Medical record number must be %s to %s digits</string>
+
+    <!-- EditMemberFragment -->
+    <string name="menu_delete_beneficiary">Delete</string>
+    <string name="delete_dialog_message">Why are you deleting?</string>
+    <string name="choose_member_dialog_message">Who should be the new head of household?</string>
+    <string name="confirm_household_delete_title">Are you sure?</string>
+    <string name="confirm_household_delete_message">This will remove the household from health insurance</string>
+
+    <string name="edit_input_add">Add</string>
+    <string name="edit_input_edit">Edit</string>
+
+    <!-- PaymentFragment -->
+    <string name="review_title">Review membership</string>
+    <string name="membership_type_label">Membership Type</string>
+    <string name="paying_button_label">@string/paying</string>
+    <string name="indigent_button_label">@string/indigent</string>
+    <string name="payment_date">Payment Date</string>
+    <string name="receipt_number">Receipt Number</string>
+    <string name="penalty_fee_label">Penalty</string>
+    <string name="penalty_fee">Penalty (Optional)</string>
+    <string name="other_fee">Other</string>
+    <string name="replace_member_card">Replace member card</string>
+    <string name="fees_header_text">Fees</string>
+    <string name="contribution">Annual Contribution</string>
+    <string name="registration_fee">Registration Fee</string>
+    <string name="additional_household_member">Additional members</string>
+    <string name="card_replacement_fee_label">Card replacement fee</string>
+    <string name="other_fees">Other Fees</string>
+    <string name="total">Total</string>
+    <string name="confirm_payment">Confirm payment</string>
+    <string name="renew_household_button">Renew Member</string>
+
+    <string name="payment_date_validation_error">Payment date is required</string>
+    <string name="receipt_number_validation_error">Receipt number is required</string>
+    <string name="total_validation_error">Total is required</string>
+
+    <string name="cannot_toggle_indigent_message">Changing membership type to Indigent is not permitted at this time.</string>
+    <string name="confirm">Confirm</string>
+
+    <!-- ReviewFragment -->
+    <string name="enroll_household_button">Enroll Household</string>
+
+    <!-- HouseholdFragment -->
+    <string name="household_title">Member</string>
+    <string name="needs_to_renew_membership">Needs to renew membership</string>
+    <string name="beneficiary_requires_payment">Beneficiary requires payment</string>
+    <string name="pay">Pay</string>
+    <plurals name="household_summary">
+        <item quantity="one">%d person  &#8226;  %s  &#8226;  %s</item>
+        <item quantity="other">%d people  &#8226;  %s  &#8226;  %s</item>
+    </plurals>
+    <string name="additional_beneficiary_payment_button">Pay for additional beneficiary</string>
+    <string name="card_replacement_button">Pay for card replacement</string>
+
+    <!-- CUSTOM VIEWS -->
+
+    <!-- HouseholdCard -->
+    <string name="household_card_summary_with_membership_number" translatable="false">%s   &#8226;  %s</string>
+    <string name="household_card_summary" translatable="false">%s</string>
+    <string name="member_list_item_gender_age" translatable="false">%1$s, %2$s</string>
+    <plurals name="household_card_more_members_notice" >
+        <item quantity="one">And %d more beneficiary</item>
+        <item quantity="other">And %d more beneficiaries</item>
+    </plurals>
+
+    <!-- SelectBirthdateDialog -->
+    <string name="age_field_label">Age</string>
+    <string name="birthdate_field_label">Birthdate</string>
+    <string name="age_dialog_title">@string/age_field_label</string>
+    <string name="birthdate_dialog_title">@string/birthdate_field_label</string>
+    <string name="toggle_date_input">Enter birthdate?</string>
+    <string name="toggle_age_input">Enter age?</string>
+    <string name="day_label">Day</string>
+    <string name="month_label">Month</string>
+    <string name="year_label">Year</string>
+    <string name="invalid_date_error_message">Invalid date</string>
+    <string name="day_validation_error">Day cannot be blank</string>
+    <string name="month_validation_error">Month cannot be blank</string>
+    <string name="year_validation_error">Year cannot be blank</string>
+    <string name="age_validation_error">Invalid age</string>
+    <string name="age_missing_error">Age is required</string>
+    <string-array name="age_units">
+        <item>@string/years</item>
+        <item>@string/months</item>
+    </string-array>
+
+    <!-- EthiopianDatePickerDialog -->
+    <string name="eth_datepicker_title">Date</string>
+    <string name="dialog_save">Save</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="eth_datepicker_day">Day</string>
+    <string name="eth_datepicker_month">Month</string>
+    <string name="eth_datepicker_year">Year</string>
+</resources>

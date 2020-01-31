@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/more"
+        android:title=""
+        android:icon="@drawable/ic_more_vert_white_24dp"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/menu_switch_language"
+                android:orderInCategory="105"
+                android:title="@string/menu_switch_language"
+                android:icon="@drawable/ic_language_black_24dp"
+                android:visible="false"
+                app:showAsAction="never"/>
+            <item
+                android:id="@+id/menu_logout"
+                android:orderInCategory="106"
+                android:title="@string/menu_logout_label"
+                android:visible="false"
+                app:showAsAction="never"/>
+        </menu>
+    </item>
+</menu>

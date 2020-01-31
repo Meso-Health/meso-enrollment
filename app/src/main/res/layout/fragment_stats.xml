@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:clickable="true" >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/filters_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/space24"
+            android:paddingStart="@dimen/space16"
+            android:paddingEnd="@dimen/space16"
+            android:paddingBottom="@dimen/space4"
+            android:background="@drawable/panel_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <org.watsi.enrollment.views.SpinnerField
+                android:id="@+id/admin_division_spinner_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16" />
+
+            <org.watsi.enrollment.views.SpinnerField
+                android:id="@+id/paying_spinner_field"
+                app:label="@string/paying_filter_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                app:layout_constraintTop_toBottomOf="@id/admin_division_spinner_field" />
+
+            <org.watsi.enrollment.views.SpinnerField
+                android:id="@+id/gender_spinner_field"
+                app:label="@string/gender_filter_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                app:layout_constraintTop_toBottomOf="@id/paying_spinner_field" />
+
+            <org.watsi.enrollment.views.SpinnerField
+                android:id="@+id/renewal_spinner_field"
+                app:label="@string/renewal_filter_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space16"
+                app:layout_constraintTop_toBottomOf="@id/gender_spinner_field" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/member_card_panel_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space16"
+            android:paddingTop="@dimen/space48"
+            android:text="@string/summary_stats_panel_header_text"
+            style="@style/PanelHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/filters_container" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/summary_statistics_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space8"
+            android:paddingTop="@dimen/space8"
+            android:paddingBottom="@dimen/space8"
+            android:background="@drawable/panel_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/member_card_panel_header" >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/enrolled_members_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space8"
+                android:paddingBottom="@dimen/space8"
+                android:background="@drawable/statistic_border_right"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/enrolled_beneficiaries_container"
+                app:layout_constraintHorizontal_bias="0.333" >
+
+                <TextView
+                    android:id="@+id/enrolled_members_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fontSize18"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/members_enrolled_label"
+                    style="@style/Label"
+                    app:layout_constraintTop_toBottomOf="@id/enrolled_members_count" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/enrolled_beneficiaries_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space8"
+                android:paddingBottom="@dimen/space8"
+                android:background="@drawable/statistic_border_right"
+                app:layout_constraintStart_toEndOf="@id/enrolled_members_container"
+                app:layout_constraintEnd_toStartOf="@id/total_collected_container"
+                app:layout_constraintHorizontal_bias="0.333" >
+
+                <TextView
+                    android:id="@+id/enrolled_beneficiaries_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fontSize18"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/beneficiaries_enrolled_label"
+                    style="@style/Label"
+                    app:layout_constraintTop_toBottomOf="@id/enrolled_beneficiaries_count" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/total_collected_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/space8"
+                android:paddingBottom="@dimen/space8"
+                android:background="@drawable/statistic_border_right"
+                app:layout_constraintStart_toEndOf="@id/enrolled_beneficiaries_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.333" >
+
+                <TextView
+                    android:id="@+id/total_collected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/fontSize18"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    style="@style/Label"
+                    app:layout_constraintTop_toBottomOf="@id/total_collected" />
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/payment_statistics_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space16"
+            android:paddingEnd="@dimen/space16"
+            android:background="@drawable/panel_bottom_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/summary_statistics_container" >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/payment_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

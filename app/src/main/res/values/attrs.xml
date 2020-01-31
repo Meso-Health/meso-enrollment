@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="label" format="reference|string" localization="suggested" />
+    <declare-styleable name="DialogEditField">
+        <attr name="label" />
+        <attr name="android:inputType" />
+    </declare-styleable>
+    <declare-styleable name="DialogDateEditField">
+        <attr name="label" />
+        <attr name="android:inputType" />
+    </declare-styleable>
+    <declare-styleable name="DialogBirthdateField">
+        <attr name="showCalendarIcon" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ButtonWithPreview">
+        <attr name="buttonText" format="reference" localization="suggested" />
+        <attr name="icon" format="reference" localization="suggested" />
+    </declare-styleable>
+    <declare-styleable name="SpinnerField">
+        <attr name="label" />
+    </declare-styleable>
+    <declare-styleable name="StatusField">
+        <attr name="android:text" />
+    </declare-styleable>
+    <declare-styleable name="NotificationBar">
+        <attr name="message" format="string" localization="suggested"/>
+        <attr name="action" format="string" localization="suggested"/>
+    </declare-styleable>
+</resources>

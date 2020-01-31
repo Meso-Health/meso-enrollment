@@ -1,0 +1,204 @@
+plugins {
+    id("com.github.triplet.play") version "2.1.0"
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.github.triplet.play'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+play {
+    serviceAccountCredentials = file('google-play-key.json')
+    track = project.properties['track']
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        applicationId rootProject.ext.applicationId
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "boolean", "REPORT_TO_ROLLBAR", "false"
+        buildConfigField "String", "ROLLBAR_API_KEY", gradle.ext.rollbarApiKey
+        buildConfigField "String", "API_HOST", gradle.ext.apiHostDebug
+    }
+    signingConfigs {
+        releaseConfig {
+            storeFile file("release-key.jks")
+            storePassword gradle.ext.releaseKeystorePassword
+            keyAlias gradle.ext.releaseKeyAlias
+            keyPassword gradle.ext.releaseKeyPassword
+        }
+    }
+    flavorDimensions "version"
+    productFlavors {
+        uganda {
+            dimension "version"
+            applicationIdSuffix ".uga"
+            versionNameSuffix "-uga"
+            buildConfigField "boolean", "ENABLE_LANGUAGE_SWITCH", "false"
+            buildConfigField "boolean", "ENABLE_MEMBERSHIP_NUMBER_SEARCH", "false"
+            buildConfigField "boolean", "ENABLE_REPORTING", "false"
+            buildConfigField "boolean", "ENABLE_RENEWALS", "false"
+            buildConfigField "String", "CALENDAR_LOCALE", "\"international\""
+            buildConfigField "String", "HOUSEHOLD_ADMIN_DIVISION_LEVEL", "\"subvillage\""
+            buildConfigField "boolean", "ENABLE_COLLECT_ADDRESS", "false"
+            buildConfigField "boolean", "ENABLE_COLLECT_PAYMENT_INFO", "false"
+            buildConfigField 'int', 'MEMBER_FULL_NAME_MIN_LENGTH', '1'
+            buildConfigField 'int', 'MEMBER_MEDICAL_RECORD_NUMBER_MIN_LENGTH', '0'
+            buildConfigField 'int', 'MEMBER_MEDICAL_RECORD_NUMBER_MAX_LENGTH', '32'
+            buildConfigField 'boolean', 'ENABLE_COLLECT_MEMBERSHIP_NUMBER', "false"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_MEDICAL_RECORD_NUMBER', "false"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_RELATIONSHIP_TO_HEAD', "false"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_PROFESSION', "false"
+            buildConfigField 'int', 'MONEY_MULTIPLE', "1"
+            buildConfigField 'String', 'CURRENCY', "\"UGX\""
+        }
+        demo {
+            dimension "version"
+            applicationIdSuffix ".demo"
+            versionNameSuffix "-demo"
+            buildConfigField "boolean", "ENABLE_LANGUAGE_SWITCH", "true"
+            buildConfigField "boolean", "ENABLE_MEMBERSHIP_NUMBER_SEARCH", "true"
+            buildConfigField "boolean", "ENABLE_REPORTING", "true"
+            buildConfigField "boolean", "ENABLE_RENEWALS", "true"
+            buildConfigField "String", "CALENDAR_LOCALE", "\"ethiopia\""
+            buildConfigField "String", "HOUSEHOLD_ADMIN_DIVISION_LEVEL", "\"kusket\""
+            buildConfigField "boolean", "ENABLE_COLLECT_ADDRESS", "true"
+            buildConfigField "boolean", "ENABLE_COLLECT_PAYMENT_INFO", "true"
+            buildConfigField 'int', 'MEMBER_FULL_NAME_MIN_LENGTH', '3'
+            buildConfigField 'int', 'MEMBER_MEDICAL_RECORD_NUMBER_MIN_LENGTH', '5'
+            buildConfigField 'int', 'MEMBER_MEDICAL_RECORD_NUMBER_MAX_LENGTH', '7'
+            buildConfigField 'boolean', 'ENABLE_COLLECT_MEMBERSHIP_NUMBER', "true"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_MEDICAL_RECORD_NUMBER', "true"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_RELATIONSHIP_TO_HEAD', "true"
+            buildConfigField 'boolean', 'ENABLE_COLLECT_PROFESSION', "true"
+            /**
+             * moneyMultiple is defined as follows:
+             *   lowest money value * moneyMultiple = 1
+             *
+             * For example:
+             * - in Uganda, the lowest money value is 1 UGX. So the moneyMultiple is 1.
+             * - in the United States, the lowest money value is 0.01 USD (one cent), so the moneyMultiple is 100.
+             * For reasons of accounting consistentcy and best engineering practices, we store currency in our database as an integer.
+             * As a result, in order to store one cent, we would store 1 in the database instead of 0.01.
+             */
+            buildConfigField 'int', 'MONEY_MULTIPLE', "100"
+            buildConfigField 'String', 'CURRENCY', "\"Birr\""
+        }
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-debug'
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher"
+            ]
+        }
+        sandbox {
+            signingConfig signingConfigs.releaseConfig
+            applicationIdSuffix ".sandbox"
+            versionNameSuffix "-sandbox"
+            buildConfigField "boolean", "REPORT_TO_ROLLBAR", "true"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher_sandbox"
+            ]
+
+            buildConfigField "String", "API_HOST", gradle.ext.apiHostSandbox
+        }
+        release {
+            signingConfig signingConfigs.releaseConfig
+            applicationIdSuffix ".production"
+            versionNameSuffix "-production"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "REPORT_TO_ROLLBAR", "true"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher"
+            ]
+
+            buildConfigField "String", "API_HOST", gradle.ext.apiHostProduction
+        }
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+        unitTests.all {
+            maxHeapSize = '3200m'
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.dependencies
+    def testDependencies = rootProject.ext.testDependencies
+    implementation(project(':domain')) {
+        exclude group: 'org.threeten', module: 'threetenbp'
+    }
+    implementation(project(':device')) {
+        exclude group: 'org.threeten', module: 'threetenbp'
+    }
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // Support libraries
+    implementation dependencies.kotlin
+    implementation dependencies.kotlinReflect
+    implementation dependencies.androidSupportLibrary
+    implementation dependencies.recyclerView
+    implementation dependencies.supportDesign
+    implementation dependencies.constraintLayout
+    implementation dependencies.gson
+    implementation dependencies.gmsVision
+    // Time
+    implementation dependencies.threeTenAndroidBackport
+    implementation dependencies.joda
+    // API
+    implementation dependencies.retrofit
+    implementation dependencies.retrofitRxJava
+    implementation dependencies.gsonConverter
+    // GPS
+    implementation dependencies.gmsLocation
+    // AAC
+    implementation dependencies.aacLifecycleExtensions
+    implementation dependencies.roomRuntime
+    implementation dependencies.roomRxJava
+    implementation dependencies.reactiveStreams
+    kapt dependencies.roomCompiler
+    // Utility
+    implementation dependencies.apacheCommonsText
+    // Image loading
+    // https://bumptech.github.io/glide/doc/download-setup.html#gradle
+    implementation (dependencies.glide) {
+        exclude group: "com.android.support"
+    }
+    kapt dependencies.glideCompiler
+    // Dependency injection
+    implementation dependencies.dagger
+    implementation dependencies.daggerAndroidSupport
+    kapt dependencies.daggerAndroidProcessor
+    kapt dependencies.daggerCompiler
+    kaptTest dependencies.daggerCompiler
+    kaptAndroidTest dependencies.daggerCompiler
+    // RX Java
+    implementation dependencies.rxJava
+    implementation dependencies.rxAndroid
+    // Exception reporting
+    implementation dependencies.rollbar
+    // Testing
+    testImplementation project(path: ':domain', configuration: 'testOutput')
+    testImplementation testDependencies.junit
+    testImplementation testDependencies.mockito
+    testImplementation testDependencies.mockitoKotlin
+    testImplementation testDependencies.aacTesting
+    testImplementation testDependencies.robolectric
+    androidTestImplementation testDependencies.androidTestRunner
+    androidTestImplementation testDependencies.espresso
+    androidTestImplementation testDependencies.okReplayEspresso
+}
