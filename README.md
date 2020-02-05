@@ -36,7 +36,7 @@ The codebase follows the [Android Kotlin Styleguide](https://android.github.io/k
 
 We use [Android Studio](https://developer.android.com/studio/index.html) as our IDE which leverages [Gradle](https://gradle.org/) as the build tool.
 
-In order to run the application, you also need a `variables.gradle` file in your root directory which stores environment variables. Create a file called `variables.gradle` and copy the file contents from 1Password.
+In order to run the application, you also need a `variables.gradle` file in your root directory which stores environment variables. Create a file called `variables.gradle` and copy the file contents `variables.gradle.tmpl`.
 
 #### Connecting to your device
 
