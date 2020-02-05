@@ -69,8 +69,8 @@ android {
             buildConfigField "boolean", "ENABLE_MEMBERSHIP_NUMBER_SEARCH", "true"
             buildConfigField "boolean", "ENABLE_REPORTING", "true"
             buildConfigField "boolean", "ENABLE_RENEWALS", "true"
-            buildConfigField "String", "CALENDAR_LOCALE", "\"ethiopia\""
-            buildConfigField "String", "HOUSEHOLD_ADMIN_DIVISION_LEVEL", "\"kusket\""
+            buildConfigField "String", "CALENDAR_LOCALE", "\"international\""
+            buildConfigField "String", "HOUSEHOLD_ADMIN_DIVISION_LEVEL", "\"municipality\""
             buildConfigField "boolean", "ENABLE_COLLECT_ADDRESS", "true"
             buildConfigField "boolean", "ENABLE_COLLECT_PAYMENT_INFO", "true"
             buildConfigField 'int', 'MEMBER_FULL_NAME_MIN_LENGTH', '3'
