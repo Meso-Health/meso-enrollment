@@ -145,11 +145,7 @@ class NewMemberFragment : DaggerFragment(), TextView.OnEditorActionListener, Nav
                 }
 
                 if (it.name.isEmpty()) {
-                    activity.title = if (isHeadOfHousehold) {
-                        context.getString(R.string.new_household_title)
-                    } else {
-                        context.getString(R.string.member_details_title)
-                    }
+                    context.getString(R.string.member_details_title)
                 } else {
                     activity.title = it.name
                 }

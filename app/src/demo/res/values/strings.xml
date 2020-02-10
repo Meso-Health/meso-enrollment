@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- NewHouseholdFragment -->
-    <string name="new_household_title">New member</string>
-    <string name="new_household_dialog_message">You will lose any information about this member.</string>
-
     <!-- NewMemberFragment -->
     <string name="member_details_title">New person</string>
     <string name="new_member_dialog_message">You will lose any information about this person.</string>

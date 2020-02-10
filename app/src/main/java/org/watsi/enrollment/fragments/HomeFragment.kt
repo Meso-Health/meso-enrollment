@@ -6,7 +6,7 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.fragment_home.amend_button
+import kotlinx.android.synthetic.main.fragment_home.edit_button
 import kotlinx.android.synthetic.main.fragment_home.enroll_button
 import kotlinx.android.synthetic.main.fragment_home.recent_button
 import kotlinx.android.synthetic.main.fragment_home.renew_button
@@ -34,7 +34,7 @@ class HomeFragment : DaggerFragment() {
             navigationManager.goTo(NewHouseholdFragment())
         }
 
-        listOf(renew_button, amend_button).forEach {
+        listOf(renew_button, edit_button).forEach {
             it.setOnClickListener {
                 if (BuildConfig.ENABLE_MEMBERSHIP_NUMBER_SEARCH) {
                     navigationManager.goTo(MemberSearchWithMembershipNumberFragment())

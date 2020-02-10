@@ -100,7 +100,7 @@
 
     <!-- HomeFragment -->
     <string name="enroll">Enroll</string>
-    <string name="amend">Amend</string>
+    <string name="edit">Edit</string>
     <string name="recent">Recent</string>
     <string name="reports">Reports</string>
     <string name="status">Status</string>
@@ -199,7 +199,8 @@
     <string name="enrollment_date">Enrollment date</string>
     <string name="enrollment_date_missing_error">Enrollment date is required</string>
     <string name="enrollment_date_validation_error" translatable="false">Enrollment date cannot be before the start of the enrollment period (%s)</string>
-
+    <string name="new_household_title">New household</string>
+    <string name="new_household_dialog_message">You will lose any information about this household.</string>
     <string name="house_number_description">House number (optional)</string>
 
     <!-- NewMemberFragment -->

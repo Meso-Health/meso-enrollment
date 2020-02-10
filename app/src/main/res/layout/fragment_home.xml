@@ -86,7 +86,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/amend_button"
+        android:id="@+id/edit_button"
         android:layout_marginTop="@dimen/space36"
         android:layout_width="@dimen/viewHeight120"
         android:layout_height="@dimen/viewHeight120"
@@ -102,8 +102,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_baseline_amend_24px"
-            android:text="@string/amend"
+            android:drawableTop="@drawable/ic_baseline_edit_24px"
+            android:text="@string/edit"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/fontSize18"
@@ -151,7 +151,7 @@
         android:background="@drawable/button_primary_background"
         android:visibility="gone"
         app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintTop_toBottomOf="@id/amend_button"
+        app:layout_constraintTop_toBottomOf="@id/edit_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/vertical_center_guideline_for_left_buttons">
 
