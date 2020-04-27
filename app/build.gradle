@@ -91,7 +91,7 @@ android {
              * As a result, in order to store one cent, we would store 1 in the database instead of 0.01.
              */
             buildConfigField 'int', 'MONEY_MULTIPLE', "100"
-            buildConfigField 'String', 'CURRENCY', "\"Birr\""
+            buildConfigField 'String', 'CURRENCY', "\"USD\""
         }
     }
     buildTypes {
